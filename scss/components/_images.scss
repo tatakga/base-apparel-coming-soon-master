@@ -1,0 +1,17 @@
+@import "../abstracts/_abstracts-dir";
+img {
+  width: 100%;
+  height: auto;
+}
+.pc__none {
+  display: inline-block;
+  @include for-desktop {
+    display: none;
+  }
+}
+.sp__none {
+  display: none;
+  @include for-desktop {
+    display: inline-block;
+  }
+}

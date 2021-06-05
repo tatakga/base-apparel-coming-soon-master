@@ -1,0 +1,117 @@
+@import "../abstracts/_abstracts-dir";
+.hero {
+  &__grid {
+    display: grid;
+    @include for-desktop {
+      min-height: 100vh;
+    }
+    &--3 {
+      grid-template-rows: repeat(3, auto);
+      @include for-desktop {
+        grid-template-columns: auto minmax(30%, 610px);
+        grid-template-rows: 100px 1fr;
+      }
+    }
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    @include for-desktop {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      padding: 10rem 25%;
+    }
+    img {
+      max-width: 13rem;
+    }
+  }
+  &__image {
+    display: flex;
+    @include for-desktop {
+      grid-column: 2/3;
+      grid-row: 1/3;
+      height: 100vh;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: $FF-Josefin-Sans;
+    padding: 6rem 2rem;
+    @include for-desktop {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      text-align: left;
+      padding: 10rem 25%;
+    }
+  }
+  &__title {
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    color: $Dark-Grayish-Red;
+    font-weight: $FW-600;
+    line-height: 1;
+    margin-bottom: 1.6rem;
+    span {
+      color: $Desaturated-Red;
+      font-weight: $FW-300;
+    }
+  }
+  &__description {
+    font-size: 1.6rem;
+    opacity: 0.9;
+    color: $Desaturated-Red;
+    margin-bottom: 3.2rem;
+    line-height: 1.5;
+  }
+  &__form__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 2rem;
+    border-radius: 4rem;
+    width: 100%;
+    height: 5rem;
+    border: solid 1px $Desaturated-Red;
+    input {
+      font-size: 1.6rem;
+      width: 90%;
+      color: $Desaturated-Red;
+      border: none;
+      outline: none;
+      &::placeholder {
+        color: inherit;
+      }
+    }
+    .icon-error {
+      display: none;
+      max-width: 2rem;
+      height: auto;
+      right: 8rem;
+      position: absolute;
+      &.active {
+        display: inline-block;
+      }
+    }
+    button {
+      display: inline-block;
+      position: absolute;
+      top: -0.2rem;
+      right: -0.2rem;
+      width: 7rem;
+      height: 5.2rem;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      border-radius: 4rem;
+      box-shadow: 2px 4px 11px 0 $Desaturated-Red;
+      &:hover {
+        opacity: 0.5;
+      }
+      img {
+        max-width: 12px;
+      }
+    }
+  }
+}
